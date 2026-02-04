@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建筑表观病害识别系统V1.0使用说明</title>
+    <style>
+        /* --- 样式设置 --- */
+        :root {
+            --primary-color: #0052D9;
+            --bg-color: #F5F6FA;
+            --text-main: #333;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+
+        /* 顶部信息 */
+        .header {
+            background: #fff;
+            padding: 40px 20px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .header h1 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 13px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        /* 章节通用 */
+        .section {
+            padding: 20px 20px;
+            border-bottom: 8px solid var(--bg-color);
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 18px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+            margin: 10px 0 15px 0;
+            color: #000;
+        }
+
+        /* 强调框 */
+        .highlight-box {
+            background-color: #FFFBE6;
+            border: 1px solid #FFE58F;
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        /* 列表与文字 */
+        p {
+            font-size: 15px;
+            margin-bottom: 10px;
+            text-align: justify; /* 两端对齐，更整齐 */
+        }
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #444;
+        }
+
+        /* 图片样式 */
+        .img-container {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 25px; 
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+        }
+        .img-container img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 底部样式优化：改为白色背景，左对齐 */
+        .footer {
+            padding: 20px 20px 50px; /* 底部多留点白 */
+            background: #fff;       /* 白色背景 */
+            color: #333;            /* 深色文字 */
+            text-align: left;       /* 左对齐 */
+            border-top: 8px solid var(--bg-color); /* 保持章节分隔感 */
+        }
+        .qr-placeholder {
+            max-width: 100%; 
+            margin: 20px auto 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee; /* 给二维码图片加个细边框，更精致 */
+        }
+        .qr-placeholder img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <h1>建筑表观病害识别系统V1.0<br>使用说明</h1>
+        <p>浙江大学长三角智慧绿洲创新中心</p>
+        <p>浙江大学空间结构研究中心</p>
+        <p style="color:#999; font-size:12px; margin-top:10px;">2026年02月02日</p>
+    </header>
+
+    <section class="section">
+        <h2>1. 简介</h2>
+        <p>
+            《建筑表观病害识别系统V1.0》由浙江大学长三角智慧绿洲创新中心未来城市（智慧城市）实验室团队自主研发，是一套面向建筑结构典型表观病害（裂缝、锈蚀等）特征的轻量化检监测软件。
+        </p>
+        <p>
+            系统强调低门槛与便携性，支持使用手机完成裂缝等病害的快速采集与识别，使非专业用户经过简单操作即可在现场便捷开展观测与持续监控，并实现结果的记录和留档。相关发明专利已获授权：《基于硬币参考的裂缝实时检测方法及装置》（申请号：202511531117.7）。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>2. 使用说明</h2>
+        
+        <p><strong>2.1 用户首次操作步骤</strong></p>
+        
+        <p>1. 点击 http://zju-futurecity.com/visions/，进入登录界面，点击“注册账号”注册，注册成功后进行登录；</p>
+        <p>2. 在登录后的界面，点击“裂缝识别”（注：“锈蚀识别”、“缺损识别”模块尚在开发中），弹出“图像识别”与“查看已有测点”（注：测点用于区分不同位置的裂缝，若用户希望持续监测同一处裂缝，需将后续相关图像均关联对应同一测点）；</p>
+        <p>3. 点击“图像识别”进入下一个界面；</p>
+
+        <div class="img-container">
+            <img src="1.png" alt="图1">
+        </div>
+
+        <p>4. 点击“建立新测点”，为“待测裂缝”测点命名；</p>
+        <p>5. 点击“拍照/上传图像”，上传一张如示例所示的图像。</p>
+        
+        <div class="highlight-box">
+            <strong>⚠️ 注：图像拍摄注意事项</strong>
+            <ul style="margin-bottom:0;">
+                <li>① 准备一枚一元硬币，将其紧贴于裂缝所在墙体平面；</li>
+                <li>② 使用手机拍摄时，令硬币宽度约占图像宽度的5~10%，图像宜包含整个手背；</li>
+                <li>③ 拍摄时尽量正对墙面，倾斜角度不宜过大。</li>
+            </ul>
+        </div>
+
+        <p>6. “材质类型”选择“水泥/乳胶漆”（注：其他材质的模型参数尚在调试中）；</p>
+        <p>7. 点击“开始识别”，等待结果；</p>
+
+        <div class="img-container">
+            <img src="2.png" alt="图2">
+        </div>
+
+        <p>8. 识别过程中耗时可能较长，待结果弹窗后，可点击“重新识别”或“保存结果”，点击后者进入下一个界面可查看裂缝参数图、掩码图以及裂缝特征变化曲线，点击裂缝参数图和掩码图可进行图片下载，曲线“最大宽度”按钮可以切换为“平均宽度”和“裂缝长度”分别查看数据；</p>
+
+        <div class="img-container">
+            <img src="3.png" alt="图3">
+        </div>
+
+        <p>9. 点击“返回首页”可返回裂缝识别界面，经过以上步骤即完成了一次裂缝图像识别操作。</p>
+
+        <p style="margin-top: 30px;"><strong>2.2 用户后续日常操作注意事项</strong></p>
+        
+        <p>用户后续日常使用时拥有两种登录方式，即账号密码登录与验证码登录（注：“忘记密码”功能暂时不支持使用）。</p>
+        
+        <div class="img-container">
+            <img src="4.png" alt="图4">
+        </div>
+
+        <p>点击“选择已有测点”按钮，即可上传同一位置在不同时期拍摄的裂缝图像，实现该处裂缝的长期观测。</p>
+
+        <div class="img-container">
+            <img src="5.png" alt="图5">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <h2>3. 软件支持</h2>
+        <p>
+            为了方便大家交流使用心得、反馈程序BUG、提出宝贵意见，我们建立了微信用户交流群。扫描下方二维码（2月11日以前有效）即可入群，与开发者及其他用户实时沟通。
+        </p>
+        <p>
+            也欢迎大家积极关注我们的官方公众号。我们会定期发布版本更新说明与进阶使用教程，助您更高效地使用本程序。
+        </p>
+
+        <div class="qr-placeholder">
+            <img src="6.png" alt="图6：二维码">
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
